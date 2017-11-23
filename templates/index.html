@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title> MyRide - Coming Soon </title>
+    <style>
+      .main {
+        width: 100%;
+        height: 1vh;
+      }
+      @font-face {
+		    font-family: 'ONEDAY';
+		    /*src: url('../static/ONEDAY.ttf');*/
+        src: url("{{ url_for('static', filename = 'ONEDAY.ttf') }}");
+		  }
+      .heading {
+        font-size: 50px;
+        font-family: 'ONEDAY';
+        height: 100%;
+    		width: 100%;
+    		display: flex;
+    		position: fixed;
+    		align-items: center;
+    		justify-content: center;
+      }
+      span {
+	  	 background-image: linear-gradient(to right, #00EF93, #00C396);
+       -webkit-background-clip: text;
+  		 -webkit-text-fill-color: transparent;
+       text-align: center;
+	    }
+      html {
+    	  background: url("{{ url_for('static', filename = 'background.png') }}") no-repeat center center fixed;
+    	  -webkit-background-size: cover;
+    	  -moz-background-size: cover;
+    	  -o-background-size: cover;
+    	  background-size: cover;
+	    }
+      #logo {
+        width: 400px;
+
+        margin-bottom: 300px;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading">
+
+        <span><img src="{{ url_for('static', filename = 'myride_logo.svg') }}" id="logo"><br/>Coming Soon<span>
+      </div>
+    </div>
+  </body>
+</html>
