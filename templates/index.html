@@ -7,6 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="shortcut icon" href={{ url_for('static', filename = 'myride_logo.ico') }} type="image/x-icon">
     <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
       .loading{
         width:100%;
         height: 100%;
@@ -22,7 +26,7 @@
         src: url("{{ url_for('static', filename = 'ONEDAY.ttf') }}");
 		  }
       .heading {
-        font-size: 50px;
+        font-size: 5vh;
         font-family: 'ONEDAY';
         height: 100%;
     		width: 100%;
@@ -45,9 +49,11 @@
     	  background-size: cover;
 	    }
       #logo {
-        width: 400px;
-
-        margin-bottom: 300px;
+        width: 40vh;
+        margin-bottom: 30vh;
+      }
+      #subtitle {
+        font-size: 5vh;
       }
   </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -66,7 +72,9 @@
 
       <div class="heading">
 
-        <span><img src="{{ url_for('static', filename = 'myride_logo.svg') }}" id="logo"><br/>Coming Soon<span>
+        <span><img src="{{ url_for('static', filename = 'myride_logo.svg') }}" id="logo"><br/>
+          <span id="subtitle">Coming Soon</span>
+        <span>
       </div>
     </div>
     <script>
