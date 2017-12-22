@@ -48,9 +48,6 @@
     	  -moz-background-size: cover;
     	  -o-background-size: cover;
     	  background-size: cover;
-        background-attachment: initial;
-        background-position: center;
-        background-repeat: no-repeat;
 	    }
       #logo {
         width: 40vh;
@@ -58,6 +55,13 @@
       }
       #subtitle {
         font-size: 5vh;
+      }
+      .myride {
+        position: fixed;
+        left:0;
+        top: 0;
+        height: 100%;
+        width: 100%;
       }
   </style>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110138744-1"></script>
@@ -85,6 +89,10 @@
         $(".loading").fadeOut("slow");
         $(".myride").fadeIn("slow");
       }));
+      var fixed = document.getElementsByClassName('myride')[0];
+      fixed.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+      }, false);
     </script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script>
