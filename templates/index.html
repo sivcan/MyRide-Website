@@ -3,8 +3,9 @@
     <title> MyRide - Coming Soon </title>
     <script src={{ url_for('static', filename = 'pace.js') }}></script>
     <link href={{ url_for('static', filename = 'pace-theme.css') }} rel="stylesheet" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="shortcut icon" href={{ url_for('static', filename = 'myride_logo.ico') }} type="image/x-icon">
     <style>
       * {
@@ -41,7 +42,7 @@
   		 -webkit-text-fill-color: transparent;
        text-align: center;
 	    }
-      html {
+      body {
         background: url("{{ url_for('static', filename = 'background.png') }}") no-repeat center center fixed;
         min-height: 100%;
     	  -webkit-background-size: cover;
@@ -63,6 +64,15 @@
         height: 100%;
         width: 100%;
       }
+      #userForm {
+        font-size: 2.5vh;
+        font-family: 'Roboto', sans-serif;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: #00c396;
+      }
+      input {
+        /* color: #00c396; */
+      }
   </style>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110138744-1"></script>
 	<script>
@@ -81,29 +91,20 @@
 
         <span><img src="{{ url_for('static', filename = 'myride_logo.svg') }}" id="logo"><br/>
           <span id="subtitle">Coming Soon</span>
-        <span>
+          <div id="userForm">
+              <form id="infoForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="username"/>
+                    <input type="email" id="email" placeholder="email"/>
+                    <button type="submit" id="save" class="btn">Submit</button>
+                </div>
+              </form>
+          </div>
+        </span>
+        
       </div>
     </div>
-    <script>
-      $(window).on('load', (function(){
-        $(".loading").fadeOut("slow");
-        $(".myride").fadeIn("slow");
-      }));
-      var fixed = document.getElementsByClassName('myride')[0];
-      fixed.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-      }, false);
-    </script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script>
-      var config = {
-        apiKey: "<API_KEY>",
-        authDomain: "<PROJECT_ID>.firebaseapp.com",
-        databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-        storageBucket: "<BUCKET>.appspot.com",
-        messagingSenderId: "<SENDER_ID>",
-      };
-      firebase.initializeApp(config);
-    </script>
+    <script src="{{ url_for('static', filename = 'index.js') }}"></script>
   </body>
 </html>
