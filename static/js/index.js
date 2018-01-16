@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyD9bzX7IOqvn90c0hAH3xjngbNaNec_dDw",
     authDomain: "myride-699ea.firebaseapp.com",
@@ -10,7 +11,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database().ref('myride-users');
 
-document.getElementById('infoForm').addEventListener('submit', submitForm);
+document.getElementById('contact-form').addEventListener('submit', submitForm);
 
 function submitForm(e) {
     e.preventDefault();
@@ -18,24 +19,19 @@ function submitForm(e) {
     var email = e.target.email.value;
     var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
     if (reg.test(email) === false) {
-        alert("Please enter correct email");
+        alert("Please enter a correct email");
     }
     else if((/^([a-zA-Z ]){2,30}$/).test(username) === false) {
-        alert("Please enter correct name");
+        alert("Please enter a correct name");
     }
     else {
         saveInfo(username, email);
     }
 }
 
-// Wait for the page to load.
-$(window).on('load', (function(){
-    $(".loading").fadeOut("slow");
-    $(".myride").fadeIn("slow");
-  }));
-
 function saveInfo(username, email) {
-    document.getElementById('infoForm').style.display = "none";
+    document.getElementById('contact-form').style.display = "none";
+    document.getElementById('left-sub').style.display = "none";
     var newUser = database.push();
     newUser.set({
         name: username,
@@ -43,8 +39,18 @@ function saveInfo(username, email) {
     });
 }
 
+function hideLoading() {
+    $(".loading").fadeOut("slow");
+    $(".myride").fadeIn("slow");
+}
+
+Pace.on('done', () => {
+       this.hideLoading();
+});
+
 // Disable scroll on touch devices.
 var fixed = document.getElementsByClassName('myride')[0];
 fixed.addEventListener('touchmove', function(e) {
     e.preventDefault();
 }, false);
+

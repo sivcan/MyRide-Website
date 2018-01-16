@@ -1,110 +1,73 @@
-<html>
-  <head>
-    <title> MyRide - Coming Soon </title>
-    <script src={{ url_for('static', filename = 'pace.js') }}></script>
-    <link href={{ url_for('static', filename = 'pace-theme.css') }} rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="shortcut icon" href={{ url_for('static', filename = 'myride_logo.ico') }} type="image/x-icon">
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-      .loading{
-        width:100%;
-        height: 100%;
-        background-color: white;
-      }
-      .main {
-        width: 100%;
-        height: 1vh;
-      }
-      @font-face {
-		    font-family: 'ONEDAY';
-		    /*src: url('../static/ONEDAY.ttf');*/
-        src: url("{{ url_for('static', filename = 'ONEDAY.ttf') }}");
-		  }
-      .heading {
-        font-size: 5vh;
-        font-family: 'ONEDAY';
-        height: 100%;
-    		width: 100%;
-    		display: flex;
-    		position: fixed;
-    		align-items: center;
-    		justify-content: center;
-      }
-      span {
-	  	 background-image: linear-gradient(to right, #00EF93, #00C396);
-       -webkit-background-clip: text;
-  		 -webkit-text-fill-color: transparent;
-       text-align: center;
-	    }
-      body {
-        background: url("{{ url_for('static', filename = 'background.png') }}") no-repeat center center fixed;
-        min-height: 100%;
-    	  -webkit-background-size: cover;
-    	  -moz-background-size: cover;
-    	  -o-background-size: cover;
-    	  background-size: cover;
-	    }
-      #logo {
-        width: 40vh;
-        margin-bottom: 30vh;
-      }
-      #subtitle {
-        font-size: 5vh;
-      }
-      .myride {
-        position: fixed;
-        left:0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-      }
-      #userForm {
-        font-size: 2.5vh;
-        font-family: 'Roboto', sans-serif;
-        -webkit-background-clip: unset;
-        -webkit-text-fill-color: #00c396;
-      }
-      input {
-        /* color: #00c396; */
-      }
-  </style>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110138744-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-110138744-1');
-	</script>
-  </head>
-  <body>
-    <div class="loading"> </div>
-    <div class="myride" style="display: none;">
-
-      <div class="heading">
-
-        <span><img src="{{ url_for('static', filename = 'myride_logo.svg') }}" id="logo"><br/>
-          <span id="subtitle">Coming Soon</span>
-          <div id="userForm">
-              <form id="infoForm">
-                <div class="form-group">
-                    <input type="text" id="username" placeholder="username"/>
-                    <input type="email" id="email" placeholder="email"/>
-                    <button type="submit" id="save" class="btn">Submit</button>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+        <script src="{{ url_for('static', filename = 'js/pace.js') }}"></script>
+        <link href="{{ url_for('static', filename = 'css/pace-theme.css') }}" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename = 'img/myride_logo.ico') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <title>MyRide | Coming Soon</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110138744-1"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename = 'js/googleAnalytics.js') }}" type="text/javascript"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <style>
+            body {
+              background-image: url('{{ url_for('static', filename = 'img/background.png') }}');
+              background-repeat: none;
+              background-size: cover;
+              font-family: "Lato", sans-serif;
+              font-weight: 400;
+              font-size: 1.6rem;
+              line-height: 1.7;
+              color: #777;
+              padding: 0rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading">
+        </div>
+        <div class="myride">
+            <div class="columns">
+                <div class="background">
+                    <div class="left">
+                        <div class="left-title">
+                            <div class="left-title-header">
+                                COMING SOON!
+                            </div>
+                             <div class="left-subtitle" id="left-sub">
+                                Sign up for updates<br>using the form below.
+                             </div>
+                        </div>
+                        <form id="contact-form">
+                          <input 
+                            class="input-field" 
+                            type="text" 
+                            name="username"
+                            placeholder="Name" 
+                          /><br>
+                          <input 
+                            class="input-field" 
+                            type="email" 
+                            name="email"
+                            placeholder="Email" 
+                          /><br>
+                          <input 
+                            class="notify-btn"
+                            type="submit" 
+                            value="NOTIFY ME!" 
+                          />
+                        </form>
+                    </div>
                 </div>
-              </form>
-          </div>
-        </span>
-        
-      </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="{{ url_for('static', filename = 'index.js') }}"></script>
-  </body>
+                <div class="right">
+                        <img src="{{ url_for('static', filename = 'img/myride_logo.svg') }}"/>
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename = 'js/index.js') }}" type="text/javascript"></script>
+    </body>
 </html>
