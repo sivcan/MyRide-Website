@@ -30,8 +30,8 @@ function submitForm(e) {
 }
 
 function saveInfo(username, email) {
-    document.getElementById('contact-form').style.display = "none";
-    document.getElementById('left-sub').style.display = "none";
+    document.getElementById('username').value = "";
+    document.getElementById('email').value = "";
     var newUser = database.push();
     newUser.set({
         name: username,

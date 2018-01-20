@@ -13,98 +13,83 @@ html {
 
 
 @font-face {
+  font-family: 'Helvetica Neue LT Std';
+  src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}');
+}
+
+@font-face {
   font-family: 'ONEDAY';
   src: url('{{ url_for('static', filename = 'ONEDAY.ttf') }}');
 }
 
+* {
+  font-family: 'Helvetica Neue LT Std';
+}
 
-.left-title-header {
+/*.myride {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+*/
+.content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 13% 22% 20% 26%;
+    margin-left: 100px;                            
+}
+
+.header-title {
   font-family: 'ONEDAY';
-  font-size: 4vh;
-}
-
-.columns {
-  display: flex;
-  flex-direction: row;
-  /*align-items: center;*/
-  align-content: space-between;
-  justify-content: center;
-}
-
-.background {
-  flex: 1;
-  height: 110vh;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(0, 195, 150, 0.6),
-    rgba(40, 180, 131, 0.6));
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
-}
-
-.left {
-  height: 50vh;
-  margin-top: 25vh;
-  margin-left: 4vw;
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-}
-
-.right {
-  flex: 1;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
-.left-title {
-  flex: 1;
-  color: #FFFFFF;
-  letter-spacing: 0.6rem;
-  font-size: 2vh;
-  /*border: 2px solid white;*/
-}
-
-.left-subtitle {
+  font-size: 64px;
   color: white;
-  font-size: 1.8vh;
-  font-family: 'Roboto', sans-serif;
-  /*border: 1px solid white;*/
-  margin-top: 2vh;
+  letter-spacing: 2.2px;
 }
 
-.contact-form {
-  flex: 1;
-  /*border: 1px solid white;*/
-  display: flex;
-  flex-direction: column;
+.subtitle {
+  color: white;
+  font-size: 32px;
+  letter-spacing: 1.2px;
+}
+
+#contact-form {
 }
 
 .input-field {
   box-sizing: border-box;
   background: white;
   outline: none;
-  height: 4vh;
-  width: 20vw;
+  height: 30px;
+  width: 344px;
   border: none;
-  margin: 5px;
-  padding: 1.1vh;
-  font-family: 'ONEDAY';
-  font-size: 2vh;
+  margin: 5px 5px 5px 0px;
+  padding-left: 11px;
+  font-size: 16px;
+}
+
+::-webkit-input-placeholder {
+  vertical-align: center;
+}
+::-moz-placeholder {
+  vertical-align: center;
+}
+:-ms-input-placeholder {
+  vertical-align: center;
+}
+:-moz-placeholder {
+  vertical-align: center;
 }
 
 .notify-btn {
-  font-family: 'ONEDAY';
   box-sizing: border-box;
   background: #4A4A4A;
   color: white;
-  height: 5vh;
-  width: 20vw;
-  font-size: 2vh;
+  height: 40px;
+  width: 344px;
+  font-size: 16px;
   border: none;
-  margin: 5px;
+  margin: 5px 5px 5px 0px;
+  outline: none;
 }
 
 .loading{
@@ -114,30 +99,6 @@ html {
 }
 
 @media only screen and (max-width: 400px) {
-  .input-field {
-    box-sizing: border-box;
-    background: white;
-    outline: none;
-    height: 4vh;
-    width: 18vw;
-    border: none;
-    margin: 5px;
-    padding: 1.1vh;
-    font-family: 'ONEDAY';
-    font-size: 1.5vh;
-  }
-
-.notify-btn {
-  font-family: 'ONEDAY';
-  box-sizing: border-box;
-  background: #4A4A4A;
-  color: white;
-  height: 5vh;
-  width: 18vw;
-  font-size: 1.5vh;
-  border: none;
-  margin: 5px;
-  }
 }
 
 
