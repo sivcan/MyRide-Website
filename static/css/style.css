@@ -14,12 +14,14 @@ html {
 
 @font-face {
   font-family: 'Helvetica Neue LT Std';
-  src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}');
+  src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}') format('opentype'),
+       url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.svg#svgFontName') }}') format('svg');
 }
 
 @font-face {
   font-family: 'ONEDAY';
-  src: url('{{ url_for('static', filename = 'ONEDAY.ttf') }}');
+  src: url('{{ url_for('static', filename = 'ONEDAY.ttf') }}')  format('truetype'), /* Safari, Android, iOS */
+       url('{{ url_for('static', filename = 'ONEDAY.svg#svgFontName') }}') format('svg');
 }
 
 * {
@@ -82,6 +84,7 @@ html {
 
 .notify-btn {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   background: #4A4A4A;
   color: white;
   height: 40px;
