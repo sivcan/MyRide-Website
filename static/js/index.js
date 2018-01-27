@@ -49,8 +49,8 @@ Pace.on('done', () => {
 });
 
 // Disable scroll on touch devices.
-var fixed = document.getElementsByClassName('myride')[0];
-fixed.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-}, false);
+// var fixed = document.getElementsByClassName('myride')[0];
+// fixed.addEventListener('touchmove', function(e) {
+//     e.preventDefault();
+// }, false);
 
