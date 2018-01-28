@@ -39,13 +39,13 @@ function saveInfo(username, email) {
     });
 }
 
-function hideLoading() {
-    $(".loading").fadeOut("slow");
-    $(".myride").fadeIn("slow");
-}
+
 
 Pace.on('done', () => {
-       this.hideLoading();
+    setTimeout(function () {
+        $(".loading").fadeOut("slow");
+        $(".myride").fadeIn("slow");
+    }, 1000);
 });
 
 // Disable scroll on touch devices.

@@ -10,7 +10,9 @@ html {
   font-size: 62.5%;
 }
 
-
+input[type=submit] {
+    -webkit-border-radius:0px;
+}
 
 @font-face {
   font-family: 'Helvetica Neue LT Std';

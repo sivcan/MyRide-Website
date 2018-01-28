@@ -31,10 +31,22 @@
         padding: 0rem;
       }
 
+      .header-title {
+        background-image: url('{{ url_for('static', filename = 'img/text1-big.svg') }}');
+        background-repeat: no-repeat;
+        height: 110%;
+        width: 110%;
+      }
+
+      .subtitle {
+        background-image: url('{{ url_for('static', filename = 'img/text2-big.svg') }}');
+        background-repeat: no-repeat;
+      }
+
       @media only screen and (max-width: 1024px) {
-       .myride {
+        .myride {
           background-image: url('{{ url_for('static', filename = 'img/background-mobile.png') }}');
-          background-repeat: none;
+          background-repeat: no-repeat;
           background-size: cover;
           height: 202vh;
           width: 100vw;
@@ -45,6 +57,16 @@
           color: #777;
           padding: 0rem;
         }
+
+        .header-title {
+          background-image: url('{{ url_for('static', filename = 'img/text1.svg') }}');
+          background-repeat: no-repeat;
+        }
+
+        .subtitle {
+          background-image: url('{{ url_for('static', filename = 'img/text2.svg') }}');
+          background-repeat: no-repeat;
+        }
       }
     </style>
   </head>
@@ -54,12 +76,8 @@
         <div class="content">
           <div></div>
           <div class="header-title">
-            COMING SOON!
           </div>
           <div class="subtitle">
-            Füllen sie die untenstehenden<br>
-            Felder aus um weitere<br>
-            Informationen zu erhalten!<br>
           </div>
           <div class="newsletter">
             <form id="contact-form">
