@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <script>
+      window.paceOptions = {
+          ajax: false,
+          restartOnRequestAfter: false,
+      };
+    </script>
     <script src="{{ url_for('static', filename = 'js/pace.js') }}"></script>
     <link href="{{ url_for('static', filename = 'css/pace-theme.css') }}" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename = 'img/myride_logo.ico') }}">
@@ -71,7 +77,8 @@
           background-repeat: no-repeat;
           width: 305px;
           height: 131px;
-          margin: 0 auto;
+          margin-left: auto;
+          margin-right: auto;
         }
         
         .spacing {
@@ -94,7 +101,7 @@
       <div class="myride">
         <div class="content">
           <div class="spacing"></div>
-          <div class="header-title">
+          <div class="header-title" xmlns="http://www.w3.org/2000/svg" version="1.1">
           </div>
           <div class="subtitle">
           </div>
