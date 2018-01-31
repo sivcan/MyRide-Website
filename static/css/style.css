@@ -10,10 +10,6 @@ html {
   font-size: 62.5%;
 }
 
-input[type=submit] {
-    -webkit-border-radius:0px;
-}
-
 @font-face {
   font-family: 'Helvetica Neue LT Std';
   src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}') format('opentype'),
@@ -84,6 +80,16 @@ input[type=submit] {
   vertical-align: center;
 }
 
+input,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="email"],
+.input-field {
+-webkit-appearance: none;
+border-radius: 0;
+}
+
 .notify-btn {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -101,22 +107,4 @@ input[type=submit] {
   width:100vw;
   height: 100vh;
   background-color: white;
-}
-
-@media only screen and (max-width: 1024px) {
-  .content {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 52% 10% 18% 10% 10%;
-    margin-left: 1px;
-    text-align: center;
-  }
-
-  .header-title {
-    font-family: 'ONEDAY';
-    font-size: 48px;
-    color: white;
-    letter-spacing: 2.2px;
-  }
-
 }

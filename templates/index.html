@@ -44,6 +44,14 @@
       }
 
       @media only screen and (max-width: 1024px) {
+         .content {
+          height: 100%;
+          display: grid;
+          grid-template-rows: 52% 10% 18% 10% 10%;
+          margin-left: 1px;
+          text-align: center;
+        }
+
         .myride {
           background-image: url('{{ url_for('static', filename = 'img/background-mobile.png') }}');
           background-repeat: no-repeat;
@@ -61,11 +69,22 @@
         .header-title {
           background-image: url('{{ url_for('static', filename = 'img/text1.svg') }}');
           background-repeat: no-repeat;
+          width: 305px;
+          height: 131px;
+          margin: 0 auto;
+        }
+        
+        .spacing {
+          margin-top: 500px;
         }
 
         .subtitle {
           background-image: url('{{ url_for('static', filename = 'img/text2.svg') }}');
           background-repeat: no-repeat;
+          width: 250px;
+          height: 70px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
     </style>
@@ -74,7 +93,7 @@
       <div class="loading"></div>
       <div class="myride">
         <div class="content">
-          <div></div>
+          <div class="spacing"></div>
           <div class="header-title">
           </div>
           <div class="subtitle">
@@ -97,7 +116,7 @@
               /><br>
               <input 
                 class="notify-btn"
-                type="submit" 
+                type="button"
                 value="FERTIG!" 
               />
             </form>

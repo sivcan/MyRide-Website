@@ -45,7 +45,7 @@ Pace.on('done', () => {
     setTimeout(function () {
         $(".loading").fadeOut("slow");
         $(".myride").fadeIn("slow");
-    }, 1000);
+    }, 250);
 });
 
 // Disable scroll on touch devices.
