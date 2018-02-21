@@ -11,9 +11,9 @@ html {
 }
 
 @font-face {
-  font-family: 'Helvetica Neue LT Std';
-  src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}') format('opentype'),
-       url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.svg#svgFontName') }}') format('svg');
+  font-family: 'Roboto-Thin';
+  src: url('{{ url_for('static', filename = 'Roboto-Thin.otf') }}') format('opentype'),
+       url('{{ url_for('static', filename = 'Roboto-Thin.svg#svgFontName') }}') format('svg');
 }
 
 @font-face {
@@ -23,7 +23,7 @@ html {
 }
 
 * {
-  font-family: 'Helvetica Neue LT Std';
+  font-family: 'Roboto-Thin';
 }
 
 /*.myride {
