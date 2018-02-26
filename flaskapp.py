@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/jobs")
 def jobs():
-	return redirect("https://waechterw.wixsite.com/fahrerjob", code=301)
+	return render_template("jobs.html")
 
 @app.route("/")
 def index():
