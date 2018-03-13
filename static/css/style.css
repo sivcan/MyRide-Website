@@ -17,13 +17,20 @@ html {
 }
 
 @font-face {
+  font-family: 'Helvetica Neue LT Std';
+  src: url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.otf') }}') format('opentype'),
+       url('{{ url_for('static', filename = 'HelveticaNeueLTStd-ThCn.svg#svgFontName') }}') format('svg');
+}
+
+@font-face {
   font-family: 'ONEDAY';
   src: url('{{ url_for('static', filename = 'img/ONEDAY.ttf') }}')  format('truetype'),
        url('{{ url_for('static', filename = 'img/ONEDAY.svg#svgFontName') }}') format('svg');
 }
 
 * {
-  font-family: 'Roboto-Thin';
+  /*font-family: 'Roboto-Thin';*/
+  font-family: 'Helvetica Neue LT Std';
 }
 
 /*.myride {
