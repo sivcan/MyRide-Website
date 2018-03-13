@@ -6,11 +6,38 @@
 			margin: 0px;
 			padding: 0px;
 		}
+		div#mydiv {
+			width: 1px;
+			min-width: 100%;
+		}
+		#mydiv {
+			position: relative;
+			height: 0;
+			overflow: hidden;
+			/*-webkit-overflow-scrolling:touch;*/
+		}
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 	</style>
 </head>
 <body>
-<div id="mydiv" style="overflow:hidden" frameborder="0">
-     <iframe id="frame" src="https://waechterw.wixsite.com/fahrerjob" width="100%" height="100%"></iframe>
+
+ <div id="mydiv">
+     <iframe id="frame" src="https://waechterw.wixsite.com/fahrerjob"></iframe>
  </div>
+
  </body>
  </html>
+
+<!-- 
+<div id="scroller" style="height: 100%; width: 100%; overflow: auto;">
+<iframe height="100%" id="iframe" width="100%" src="https://waechterw.wixsite.com/fahrerjob" /> -->
+
+
+ <!-- <div id="mydiv" style="overflow:hidden" width="100%" height="100%"> -->
